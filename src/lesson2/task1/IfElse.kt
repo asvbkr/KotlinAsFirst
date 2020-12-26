@@ -191,8 +191,8 @@ fun segmentLength(a: Int, b: Int, c: Int, d: Int): Int {
     val lCD = abs(d - c)
     if (lAB + lCD < lAD) return -1
     return when {
-        (a > c) and (b < d) -> lAB
-        (a < c) and (b > d) -> lCD
+        (a > c) and (b <= d) -> lAB
+        (a <= c) and (b > d) -> lCD
         (a > c) and (b > d) -> d - a
         else -> b - c
     }
